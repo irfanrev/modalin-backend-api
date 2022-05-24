@@ -19,6 +19,7 @@ class ProductGallery extends Model
     protected $fillable = [
         'product_id',
         'url',
+        'is_featured'
     ];
 
     
