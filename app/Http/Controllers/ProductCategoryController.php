@@ -33,9 +33,9 @@ class ProductCategoryController extends Controller
                             ' . method_field('delete') . csrf_field() . '
                         </form>';
                 })
-                ->editColumn('price', function ($item) {
-                    return number_format($item->price);
-                })
+                // ->editColumn('price', function ($item) {
+                //     return number_format($item->price);
+                // })
                 ->rawColumns(['action'])
                 ->make();
         }
@@ -118,6 +118,6 @@ class ProductCategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('dashboard.category.index');
+        return redirect()->route('dashboard.category.index')->with('success', 'Category has been deleted');
     }
 }
